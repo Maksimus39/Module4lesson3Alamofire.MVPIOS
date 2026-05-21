@@ -7,7 +7,7 @@ protocol NetworkManagerProtocol: AnyObject {
 
 class NetworkManager: NetworkManagerProtocol {
     func request<T>(completion: @escaping (Result<T, any Error>) -> Void) where T : Decodable {
-        guard let url = URL(string: "https://stoic.tekloon.net/stoic-quote") else {
+        guard let url = URL(string: BaseUrlResponse.baseURL) else {
             completion(.failure(URLError(.badURL)))
             return
         }
@@ -31,13 +31,4 @@ class NetworkManager: NetworkManagerProtocol {
                 }
             }
     }
-}
-
-struct StoicQuoteResponse: Decodable {
-    let data: StoicQuote
-}
-
-struct StoicQuote: Decodable {
-    let author: String
-    let quote: String
 }

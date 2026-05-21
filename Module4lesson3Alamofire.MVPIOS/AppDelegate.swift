@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Module4lesson3Alamofire.MVPIOS
-//
-//  Created by Максим Минаков on 03.05.2026.
-//
-
 import UIKit
 
 @main
